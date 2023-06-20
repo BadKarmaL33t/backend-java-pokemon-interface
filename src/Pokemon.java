@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.List;
-
 abstract class Pokemon {
 
     private final int level;

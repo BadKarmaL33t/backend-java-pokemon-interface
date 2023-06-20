@@ -19,20 +19,99 @@ public class FirePokemon extends Pokemon {
         super(name, level, hp, food, sound, type);
     }
 
+    // Switch statement binnen de attack methoden, omdat dit sneller is en uiteindelijk te realiseren is met de minste code.
+    // Het ziet er overzichtelijk uit, wat de leesbaarheid bevordert.
     void fireLash(Pokemon name, Pokemon enemy) {
-
+        System.out.println(name.getName() + " is attacking " + enemy.getName() + " by performing a firelash!");
+        switch (enemy.getType()) {
+            // -> gebruikt voor enhanced switch. Anders overal een "break;" nodig.
+            case "fire" -> {
+                System.out.println(enemy.getName() + " loses 10hp!");
+                enemy.setHp(enemy.getHp() - 10);
+            }
+            case "water" -> {
+                System.out.println(enemy.getName() + " loses 30hp!");
+                enemy.setHp(enemy.getHp() - 30);
+            }
+            case "electric" -> {
+                System.out.println(enemy.getName() + " loses 20hp!");
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "grass" -> {
+                System.out.println(enemy.getName() + " loses 40hp!");
+                enemy.setHp(enemy.getHp() - 40);
+            }
+        }
+        System.out.println(enemy.getName() + " has " + enemy.getHp() + " left.");
     }
 
     void flameThrower(Pokemon name, Pokemon enemy) {
-
+        System.out.println(name.getName() + " is attacking " + enemy.getName() + " by performing a flamethrower!");
+        switch (enemy.getType()) {
+            case "fire" -> {
+                System.out.println(enemy.getName() + " loses 10hp!");
+                enemy.setHp(enemy.getHp() - 10);
+            }
+            case "water" -> {
+                System.out.println(enemy.getName() + " loses 30hp!");
+                enemy.setHp(enemy.getHp() - 30);
+            }
+            case "electric" -> {
+                System.out.println(enemy.getName() + " loses 20hp!");
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "grass" -> {
+                System.out.println(enemy.getName() + " loses 40hp!");
+                enemy.setHp(enemy.getHp() - 40);
+            }
+        }
+        System.out.println(enemy.getName() + " has " + enemy.getHp() + " left.");
     }
 
     void pyroBall(Pokemon name, Pokemon enemy) {
-
+        System.out.println(name.getName() + " is attacking " + enemy.getName() + " by performing a pyroball!");
+        switch (enemy.getType()) {
+            case "fire" -> {
+                System.out.println(enemy.getName() + " loses 10hp!");
+                enemy.setHp(enemy.getHp() - 10);
+            }
+            case "water" -> {
+                System.out.println(enemy.getName() + " loses 30hp!");
+                enemy.setHp(enemy.getHp() - 30);
+            }
+            case "electric" -> {
+                System.out.println(enemy.getName() + " loses 20hp!");
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "grass" -> {
+                System.out.println(enemy.getName() + " loses 40hp!");
+                enemy.setHp(enemy.getHp() - 40);
+            }
+        }
+        System.out.println(enemy.getName() + " has " + enemy.getHp() + " left.");
     }
 
     void inferno(Pokemon name, Pokemon enemy) {
-
+        System.out.println(name.getName() + " is attacking " + enemy.getName() + " by performing an inferno!");
+        switch (enemy.getType()) {
+            case "fire" -> {
+                System.out.println(enemy.getName() + " loses 10hp!");
+                enemy.setHp(enemy.getHp() - 10);
+            }
+            case "water" -> {
+                System.out.println(enemy.getName() + " loses 30hp!");
+                enemy.setHp(enemy.getHp() - 30);
+            }
+            case "electric" -> {
+                System.out.println(enemy.getName() + " loses 20hp!");
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "grass" -> {
+                System.out.println(enemy.getName() + " loses 40hp!");
+                enemy.setHp(enemy.getHp() - 40);
+            }
+        }
+        System.out.println(enemy.getName() + " has " + enemy.getHp() + " left.");
     }
 
     List<String> getAttacks() {

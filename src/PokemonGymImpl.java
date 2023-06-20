@@ -3,13 +3,6 @@ import java.util.*;
 // Los in deze klasse alle foutmeldingen op door (abstracte) klassen met variabelen en methodes te maken en een interface met methodes (en soms een import).
 public class PokemonGymImpl implements PokemonGym {
 
-//    List<Pokemon> pokemons;
-//
-//    public PokemonGymImpl(List<Pokemon> pokemons) {
-//
-//        this.pokemons = pokemons;
-//    }
-
     @Override
     public void enteredTheGym(PokemonTrainer player1) {
         PokemonGymOwner gymOwner = new PokemonGymOwner("Brock", "Pewter City");
@@ -33,7 +26,6 @@ public class PokemonGymImpl implements PokemonGym {
         System.out.println(Main.ANSI_GREEN + player1.getName() + Main.ANSI_RESET + ": I'll choose you, " + pokemon.getName());
 
         fightRound(player1, gymOwner, pokemon, gymPokemon);
-
     }
 
     @Override
@@ -268,5 +260,4 @@ public class PokemonGymImpl implements PokemonGym {
             fightRound(trainer, gym, pokemon, gymPokemon);
         }
     }
-
 }
