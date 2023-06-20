@@ -1,10 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class PokemonGymOwner extends PokemonTrainer {
 
-    public PokemonGymOwner(String name, String town, List<Pokemon> pokemons) {
+    public PokemonGymOwner(String name, String town) {
 
-        super(name, town, pokemons);
+        super(name, town);
     }
 }
