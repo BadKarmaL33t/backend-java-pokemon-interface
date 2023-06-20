@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,24 +11,26 @@ public class Main {
     public static final String ANSI_GREEN = "\u001B[32m";
 
     // Dit zijn de Pokemons die je tot je beschikking hebt
-    private static final FirePokemon charizard = new FirePokemon("Charrizard", 76, 150, "firenougats", "GRRRRRRRRRRRRRRR");
-    private static final WaterPokemon blastoise = new WaterPokemon("Blastoise", 40, 110, "Pokeflakes", "Blaaaaasssssstooooiiiiissss");
-    private static final GrassPokemon venusaur = new GrassPokemon("Venusaur", 50, 135, "Pokeleafs", "Veeeeeeeeennnnnuuuuuusaur");
-    private static final GrassPokemon ditto = new GrassPokemon("Ditto", 60, 140, "Everything", "Dittto diiiito ");
-    private static final ElectricPokemon raichu = new ElectricPokemon("Raichu", 80, 160, "Pokebrocks", "Raaaaiiiiicccchhhhuuuuuuu!!!!");
-    private static final WaterPokemon gyarados = new WaterPokemon("Gyarados", 90, 180, "Pokeflakes", "Gyaaaaaaaaarrrraaaadoooos");
-
-    private static List<Pokemon> pokemons = Arrays.asList(charizard, blastoise, venusaur, ditto, raichu, gyarados);
 
 
     // Los in de main methode alle foutmeldigen op door (abstracte) klassen met variabelen en methoden te maken (en soms een import).
     // In de main methode en de Main klasse hoef je niks te veranderen.
     public static void main(String[] args) {
         Scanner speler_A = new Scanner(System.in);
-        PokemonGymImpl pokemonGym = new PokemonGymImpl(pokemons);
+        PokemonGymImpl pokemonGym = new PokemonGymImpl();
         System.out.println("First player please enter your name: ");
         String userA = speler_A.nextLine();
-        PokemonTrainer player1 = new PokemonTrainer(userA, pokemons);
+        PokemonTrainer player1 = new PokemonTrainer(userA);
+        // instantieren van de pokemons verplaatst naar de pokemontrainer,
+        // omdat zowel de gymowner als je player (ook een PokemonTrainer) hiervan gebruik moeten maken.
+        List<Pokemon> pokemons = new ArrayList<>();
+        pokemons.add(player1.getBlastoise());
+        pokemons.add(player1.getDitto());
+        pokemons.add(player1.getCharizard());
+        pokemons.add(player1.getRaichu());
+        pokemons.add(player1.getGyarados());
+        pokemons.add(player1.getVenusaur());
+        player1.setPokemons(pokemons);
         System.out.println("To start your game, we have given you 6 Pokemons use");
         System.out.println("these are the Pokemons you get:");
         pokemonGym.printPokemon(pokemons);
@@ -37,8 +39,5 @@ public class Main {
         if (speler_A.nextLine().equals("yes")) {
             pokemonGym.enteredTheGym(player1);
         }
-
     }
-
-
 }
